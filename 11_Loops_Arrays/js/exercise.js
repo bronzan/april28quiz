@@ -9,7 +9,9 @@
  * Create a 'for' loop that populates an array with the numbers 1 through 10 
  */
    var myArray = [];
-
+for (i=1; i<=10; i++) {
+	myArray.push(i);
+}
 
 
 /**
@@ -19,7 +21,11 @@
  */
 var sub = 100;
 var start = 1;
-
+for (start=1; start<=10; start++){
+	sub = sub - start;
+	console.log(sub);
+	console.log(start);
+}
 
 
 /**
@@ -29,7 +35,9 @@ var start = 1;
  */
 var someNums = [3, 1, 88, -1, 33, 96, 35, 12, 72];
 var largest_num = someNums[0];
-
+for (i=0; i<=someNums.length; i++) {
+	if (someNums[i] > largest_num) {largest_num = someNums[i]}
+}
 
 
 /**
@@ -38,7 +46,9 @@ var largest_num = someNums[0];
  * Store that number in "small"
  */
 var small = someNums[0];
-
+for (i=0; i<=someNums.length; i++) {
+	if (someNums[i] < small) {small = someNums[i]}
+}
 /**
  * Question 5
  * Count how many elements appear in BOTH arrays. Store the number of duplicates in the 
@@ -49,6 +59,16 @@ var firstArray = ['peaches', 'apples', 'pears', 'oranges', 'plums', 'water melon
 var secondArray = ['blueberries', 'water melon', 'tomatoes', 'apples', 'plums', 'oranges', 'cantaloupe'];
 var totalDuplicates = 0;
 
+for (f=0; f<=firstArray.length - 1; f++){
+	for (s=0; s<=secondArray.length - 1; s++){
+		if (firstArray[f] == secondArray[s]) {
+			totalDuplicates = totalDuplicates + 1;
+		};
+
+	};
+
+
+}
 
 /**
  * Question 6 - ******BONUS******
@@ -59,4 +79,16 @@ var totalDuplicates = 0;
 
 var numbers = [3, 7, 1, 3, 23, 7, 98, 26, 1];
 var totalUniques = 0;
+var dupe = false;
 
+for (c=0;c<=numbers.length - 1; c++){
+	totalUniques++;
+	dupe = false;
+	for (n=0;n<c; n++) {
+		if (numbers[n] == numbers[c]) {dupe=true};
+	};
+	if (dupe==true) {totalUniques--};
+	console.log('end-of-loop n: %o', n);
+	console.log(dupe);
+	console.log('unq: %o', totalUniques);
+}

@@ -8,12 +8,18 @@
 <hr>
 <span class="white-text">This text should be white, and my background blue</span>
 
-<div id="top-right">This element should have a grey background and on the top right of the page.</span>
+<div id="top-right">This element should have a grey background and on the top right of the page.</div>
 
 <footer>I should have a 1 pixel black border and be fixed to the bottom of the window</footer> 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
 <script>
-//Make sure to include jQuery above this.
+var $span = $('.white-text');
+$span.css({"background-color":"blue","color":"white"});
+var $div = $('#top-right');
+$div.css({'background-color':'gray', 'position':'fixed', 'top':'0', 'right':'0'})
+var $footer = $('footer');
+$footer.css({'border':'1pt solid black', 'position':'fixed', 'bottom':'0'})
 
 </script>
 
